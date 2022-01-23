@@ -23,8 +23,7 @@ button {
   cursor: pointer;
 }
 
-
-#gallery {
+.gallery {
   list-style: none;
   padding: 0;
   margin: 0;

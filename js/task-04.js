@@ -1,17 +1,14 @@
-let currentValue = 0;
+const decrement = document.querySelector('[data-action="decrement"]');
+const textValue = document.querySelector("#value");
+const increment = document.querySelector('[data-action="increment"]');
 
-const screenValue = document.getElementById('value');
 
-const increment = () => {
-    return screenValue.textContent = currentValue += 1;
-}
+let counterValue  = 0;
 
-const decrement = () => {
-    return screenValue.textContent = currentValue -= 1;
-}
+decrement.addEventListener("click", decrement => {
+    return textValue.textContent = counterValue  -= 1;
+});
 
-const btnDecrement = document.querySelector('[data-action="decrement"]')
-btnDecrement.addEventListener('click', decrement)
-
-const btnIncrement = document.querySelector('[data-action="increment"]')
-btnIncrement.addEventListener('click', increment)
+increment.addEventListener("click", increment => {
+   return textValue.textContent  = counterValue  += 1;
+});

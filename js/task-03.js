@@ -13,10 +13,21 @@ const images = [
   },
 ];
 
-function createGallery(imgArray, id) {
-  const htmlString = imgArray.reduce((acc, { url, alt }) => acc + `<li class='gallery__item'><img class="gallery__img" src='${url}' alt='${alt}'/></li>`, ''); 
-  const element = document.getElementById(id)
-  return element.insertAdjacentHTML('afterbegin', htmlString)
-}
+const galleryList = document.querySelector('.gallery');
 
-createGallery(images, 'gallery')
+
+const makeGalleryItem = items => {
+
+  return items.map((item) => {
+    const galleryItem = document.createElement('li');
+    const galleryItemImg = document.createElement('img');
+    galleryItem.append(galleryItemImg);
+    galleryItem.classList.add("gallery__item");
+    galleryItemImg.classList.add("gallery__img");
+    galleryItemImg.src = item.url;
+    galleryItemImg.alt = item.alt;
+    return galleryItem;
+  });
+};
+
+galleryList.append(...makeGalleryItem(images));

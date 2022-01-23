@@ -1,5 +1,5 @@
-const listWithItem = document.querySelector('#categories');
-console.log(`Number of categories: ${listWithItem.children.length}`);
+const listWithId = document.querySelector('#categories');
+console.log(`Number of categories: ${listWithId.children.length}`);
 
 const elements = document.getElementsByClassName('item');
     for (const element of elements) {
